@@ -1,8 +1,11 @@
 /**
- * Code base from Andrew Johnson
- * http://www.itnewb.com/tutorial/Creating-the-Smooth-Scroll-Effect-with-JavaScript
+ * @desc jQuery plugin to to scroll to an element in the x and y planes
  *
- * Modified by Max Bechdel to work in both x and y planes.
+ * example: $('#id-of-element-to-scroll-to').xyScroll();
+ *
+ * @author Andrew Johnson (http://www.itnewb.com/tutorial/Creating-the-Smooth-Scroll-Effect-with-JavaScript)
+ * @author Max Bechdel (modified to be a jQuery plugin and scroll in both x and y planes)
+ * @required jQuery
  */
 ;(function ($) {
     $.fn.xyScroll = function () {
@@ -13,7 +16,7 @@
             var startY      = start['y'];
             
             //get the end position
-            var stop        = elmPosition(this);
+            var stop        = targetPosition(this);
             var stopX       = stop['x'];
             var stopY       = stop['y'];
             
@@ -50,10 +53,7 @@
                 
                 //check if we've made it!
                 if(leapX == stopX && leapY == stopY)
-                {
-                    //setTimeout("moveNav()", timer * speed );// * (timer * .5));
                     break;
-                }
                 
                 //set the new scrollTo locations
                 leapX += directionX * (stepX + timer);
@@ -96,7 +96,10 @@
                 timer++;
             }
             
-            //returns the current position of the upper left corner of the viewable screen
+            /**
+             * @desc returns the current position of the upper left corner of the viewable screen
+             * @return array - current x,y coordinates 
+             */
             function currentPosition() {
                 //get the current coordinates (long/magic line to deal with different browsers)
                 var x = typeof window.pageXOffset != 'undefined' ? window.pageXOffset : document.documentElement.scrollLeft ? document.documentElement.scrollLeft : document.body.scrollLeft ? document.body.scrollLeft : 0;
@@ -108,8 +111,12 @@
                 };
             }
 
-            //returns the position of target element
-            function elmPosition(elm) {
+            /**
+             * @desc returns the position of target element
+             * @param object - target element to move to
+             * @return array - target x,y coordinates
+             */
+            function targetPosition(elm) {
                 var x       = elm.offsetLeft;    
                 var y       = elm.offsetTop;
                 var node    = elm;
@@ -124,23 +131,6 @@
                     'x' : x,
                     'y' : y
                 };
-            }
-
-            function moveNav()
-            {
-                upperNav = document.getElementById('upperNavList');
-                lowerNav = document.getElementById('lowerNavList');
-                pos = currentPosition();
-                
-                if (pos['x'] == 0)
-                {
-                    upperNav.className = 'navList-right';
-                    lowerNav.className = 'navList-right';
-                }else 
-                {
-                    upperNav.className = 'navList-left';
-                    lowerNav.className = 'navList-left';
-                }
             }
         });
     };
