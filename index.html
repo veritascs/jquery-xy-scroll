@@ -2,38 +2,59 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>ever-flow</title>
-    <link href="css/styles.css" rel="stylesheet">
+    <title>jQuery xy-scroll</title>
     
+    <style type="text/css">
+        html , body { height: 100%; text-transform: uppercase; font-family: "Courier New", Courier, monospace; }
+        html, body, ul, li, a, div { margin: 0px; padding: 0px; }
+        body { width: 200%; overflow:hidden; }
+
+        #navigation { position: fixed; top:auto; bottom: 0px; left: 0px; width:100%; background-color: rgba(0, 0, 0, 0.8); }
+        #inner-nav { width:100%; height: 100%; }
+        #inner-nav ul { text-align: center; }
+        #inner-nav li { display:inline; margin-right: 2em; }
+        #inner-nav a { text-decoration: none; color: #bbbbbb; }
+
+        .left-box, .right-box { width: 50%; height: 100%; }
+        .navList-right, .right-box { float: right; }
+        .navList-left, .left-box  { float: left; }
+        .row { height: 100%; }
+        .clear { clear: both; }
+
+        #upper-left { background-image:url('images/leaf.jpg'); }
+        #upper-right { background-image:url('images/lake.jpg'); }
+        #bottom-left { background-image:url('images/flower.jpg'); }
+        #bottom-right { background-image:url('images/wave.jpg'); }
+    </style>
   </head>
   <body>
     <div id="navigation">
       <div id="inner-nav">
         <ul>
-          <li class="active"><a id="top-left-nav" href="#top-left">top-left</a></li>
-          <li><a id="top-right-nav" href="#top-right">top-right</a></li>
+          <li><a id="upper-left-nav" href="#upper-left">upper left</a></li>
+          <li><a id="upper-right-nav" href="#upper-right">upper right</a></li>
           <div class="clear"></div> 
-          <li><a id="bottom-left-nav" href="#bottom-left">bottom-left</a></li>
-          <li><a id="bottom-right-nav" href="#bottom-right">bottom-right</a></li>
+          <li><a id="bottom-left-nav" href="#bottom-left">lower left</a></li>
+          <li><a id="bottom-right-nav" href="#bottom-right">lower right</a></li>
         </ul>
       </div>
     </div>
     
     <div class="row">
-      <div id="top-left" class="left-box">
-        <h1>upper left box</h2>
+      <div id="upper-left" class="left-box">
+        <h1>upper left</h2>
       </div>
-      <div id="top-right" class="right-box">
-        <h1>upper right box</h2>
+      <div id="upper-right" class="right-box">
+        <h1>upper right</h2>
       </div>
     </div>
     
     <div class="row">
       <div id="bottom-left" class="left-box">
-        <h1>bottom left box</h2>
+        <h1>lower left</h2>
       </div>
       <div id="bottom-right" class="right-box">
-        <h1>bottom right box</h2>
+        <h1>lower right</h2>
       </div>
     </div>
     
@@ -41,8 +62,8 @@
     <script type="text/javascript" src="js/jquery.min.js"></script>
     <script type="text/javascript" src="js/xy.scroll.js"></script>
     <script>
-        $('#top-left-nav').click(function (e) { e.preventDefault(); $('#top-left').xyScroll(); });
-        $('#top-right-nav').click(function (e) { e.preventDefault(); $('#top-right').xyScroll(); });
+        $('#upper-left-nav').click(function (e) { e.preventDefault(); $('#upper-left').xyScroll(); });
+        $('#upper-right-nav').click(function (e) { e.preventDefault(); $('#upper-right').xyScroll(); });
         $('#bottom-left-nav').click(function (e) { e.preventDefault(); $('#bottom-left').xyScroll(); });
         $('#bottom-right-nav').click(function (e) { e.preventDefault(); $('#bottom-right').xyScroll(); });
     </script>
