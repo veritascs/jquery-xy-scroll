@@ -1,6 +1,3 @@
-xy-scroll
-=========
-
 # xy-scroll.js
 
 a jQuery plugin to scroll in both the x and y planes
@@ -19,6 +16,6 @@ Sentence on how to use. You can use anchor html tags (fyi max).
 
 # Legal
 
-Author & copyright (c) 2013: [Max Bechdel](mbechdel@gmail.com)
+Author & copyright (c) 2013: [Max Bechdel](https://github.com/veritascs)
 
 Dual MIT & GPLv2 license
