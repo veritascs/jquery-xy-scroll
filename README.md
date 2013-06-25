@@ -9,11 +9,11 @@ include jQuery, include xy-scroll, call the plugin on the element you want to sc
 
 ## Examples
 
-<pre>
+<code>
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/xy.scroll.js"></script>
 <script>$('#id-of-element-to-scroll-to').xyScroll();</script>
-</pre>
+</code>
 
 
 # Legal
