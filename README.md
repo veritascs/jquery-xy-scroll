@@ -1,17 +1,19 @@
 # xy-scroll.js
-
 a jQuery plugin to scroll in both the x and y planes
 
 ## How to Use
+include jQuery, include xy-scroll, call the plugin on the element you want to scroll to
 
-Sentence on how to use. You can use anchor html tags (fyi max).
-
-<pre>//put code here</pre>
+<pre>$('#id-of-element-to-scroll-to').xyScroll();</pre>
 
 
 ## Examples
 
-<pre>//put code here</pre>
+<pre>
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/xy.scroll.js"></script>
+<script>$('#id-of-element-to-scroll-to').xyScroll();</script>
+</pre>
 
 
 # Legal
